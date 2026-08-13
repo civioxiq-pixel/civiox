@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta http-equiv="X-Content-Type-Options" content="nosniff">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<title>CivioX | المنصة الهندسية الشاملة</title>
+<meta name="description" content="CivioX منصة هندسية شاملة: مقررات، أسئلة وزارية، برامج هندسية، ذكاء اصطناعي، ملفات ومشاريع طلبة — لجميع الأقسام الهندسية.">
+<meta property="og:title" content="CivioX | المنصة الهندسية الشاملة">
+<meta property="og:description" content="مقررات، أسئلة وزارية، برامج، ذكاء اصطناعي وملفات — لجميع الأقسام الهندسية.">
+<meta property="og:type" content="website">
+<link rel="canonical" href="https://civiox.com/">
+<link rel="icon" href="assets/images/logo.png" type="image/png">
+<script>(function(){var t=localStorage.getItem('civiox-theme')||'dark';if(t==='system')t=matchMedia('(prefers-color-scheme: light)').matches?'light':'dark';if(t!=='light'&&t!=='gray')t='dark';document.documentElement.setAttribute('data-theme',t)})();</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&family=Rubik:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="css/site.css?v=7.60">
+<style>
+/* ====== الصفحة الرئيسية — مضغوطة ومرتبة ====== */
+.hero{
+  padding:clamp(2rem,5vw,3.6rem) 0 1.8rem;
+  display:flex;flex-direction:column;align-items:flex-start;
+  max-width:720px;
+}
+.hero .top-badge{
+  display:inline-flex;align-items:center;gap:.5rem;
+  padding:.34rem .9rem;border-radius:999px;
+  border:1px solid var(--border-h);background:var(--primary-dim);
+  font-size:var(--text-caption);font-weight:600;color:var(--primary);letter-spacing:.06em;
+  margin-bottom:1.1rem
+}
+.hero .dot{width:5px;height:5px;border-radius:50%;background:var(--primary)}
+.hero h1{
+  font-family:var(--font-display);
+  font-size:var(--text-display);font-weight:700;
+  letter-spacing:var(--tracking-display);line-height:var(--leading-display);
+}
+.hero h1 .xx{color:var(--primary-bright)}
+.hero p.lead{
+  color:var(--muted);font-size:var(--text-body-lg);
+  line-height:var(--leading-relaxed);margin:1rem 0 1.5rem;font-weight:400;max-width:580px;
+  letter-spacing:var(--tracking-body)
+}
+.hero p.lead strong{color:var(--text)}
+.hero .hero-actions{display:flex;gap:.7rem;flex-wrap:wrap}
+
+/* اختصارات الصفحات */
+.hub-grid{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:.7rem;
+  margin:1.6rem 0 0
+}
+.hub-cell{
+  background:var(--card);border:1px solid var(--border);border-radius:var(--radius);
+  padding:1.05rem 1rem;
+  display:flex;flex-direction:column;gap:.5rem;align-items:flex-start;
+  text-decoration:none;color:var(--text);
+  transition:var(--tr)
+}
+.hub-cell:hover{background:var(--card-h);border-color:var(--border-h);transform:translateY(-2px);box-shadow:var(--shadow)}
+.hub-cell .h-icon{
+  width:44px;height:44px;border-radius:var(--radius-sm);display:grid;place-items:center;
+  border:1px solid var(--border);background:var(--primary-dim);
+  font-size:.95rem;color:var(--primary);
+  transition:var(--tr)
+}
+.hub-cell .h-icon .cx-i{width:26px;height:26px}
+.hub-cell:hover .h-icon{border-color:var(--border-h);background:color-mix(in srgb,var(--primary) 14%,transparent)}
+.hub-cell h3{font-size:var(--text-sm);font-weight:600;display:flex;align-items:center;gap:.45rem}
+.hub-cell h3 .lk{font-size:var(--text-caption);color:var(--muted)}
+.hub-cell p{font-size:var(--text-caption);color:var(--muted);font-weight:600;line-height:1.7}
+
+/* الأقسام الهندسية — شريط مضغوط */
+.sect{margin-top:2.8rem}
+.sect h2{
+  font-size:var(--text-h3);font-weight:700;margin-bottom:.35rem;
+  letter-spacing:var(--tracking-h3);line-height:var(--leading-snug);
+  display:flex;align-items:center;gap:.55rem
+}
+.sect h2 i{color:var(--primary);font-size:.92rem}
+.sect h2 .cx-i{width:22px;height:22px;color:var(--primary)}
+.sect .sub{color:var(--muted);font-size:var(--text-sm);margin-bottom:1rem;line-height:1.8}
+.sect .branch-strip{margin-top:1rem}
+.branch-strip{display:flex;flex-wrap:wrap;gap:.45rem}
+.branch-chip{
+  display:inline-flex;align-items:center;gap:.45rem;
+  padding:.42rem .8rem;border-radius:999px;
+  background:var(--card);border:1px solid var(--border);
+  font-size:var(--text-caption);font-weight:700;color:var(--muted);
+  transition:var(--tr)
+}
+.branch-chip i{color:var(--primary);font-size:.72rem}
+.branch-chip:hover{border-color:var(--border-h);color:var(--text)}
+
+/* التسعير */
+.pricing-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:.8rem}
+.price-card{
+  position:relative;
+  background:var(--card);border:1px solid var(--border);border-radius:var(--radius);
+  padding:1.4rem 1.3rem;display:flex;flex-direction:column;gap:.6rem;
+  transition:var(--tr)
+}
+.price-card:hover{border-color:var(--border-h);box-shadow:var(--shadow)}
+.price-card.featured{border-color:var(--border-h);background:var(--primary-dim)}
+.price-card .pc-name{font-size:var(--text-sm);font-weight:600;color:var(--muted)}
+.price-card.featured .pc-name{color:var(--primary)}
+.price-card .pc-price{font-size:var(--text-h5);font-weight:700;line-height:1.15}
+.price-card .pc-price small{font-size:var(--text-caption);color:var(--muted);font-weight:700}
+.price-card ul{list-style:none;display:flex;flex-direction:column;gap:.42rem;margin:.35rem 0 .7rem}
+.price-card li{font-size:var(--text-sm);color:var(--muted);font-weight:600;display:flex;gap:.45rem;align-items:flex-start;line-height:1.65}
+.price-card li i{color:var(--success);margin-top:.25rem;font-size:.58rem}
+.price-card li.soon i{color:var(--gold)}
+.price-card li .soon-chip{
+  font-size:var(--text-caption);font-weight:600;color:var(--gold);
+  border:1px solid color-mix(in srgb,var(--gold) 35%,transparent);
+  border-radius:999px;padding:.06rem .45rem;margin-right:.3rem;white-space:nowrap
+}
+.price-card .pc-cta{margin-top:auto}
+.pc-ribbon{
+  position:absolute;top:1rem;left:1rem;
+  font-size:var(--text-caption);font-weight:600;color:var(--gold);
+  background:color-mix(in srgb,var(--gold) 10%,transparent);
+  border:1px solid color-mix(in srgb,var(--gold) 28%,transparent);
+  padding:.16rem .55rem;border-radius:999px
+}
+
+/* التفعيل — سطر واحد مختصر */
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:.7rem}
+.step{
+  background:var(--card);border:1px solid var(--border);border-radius:var(--radius);
+  padding:1.05rem;display:flex;gap:.75rem;align-items:flex-start;
+  transition:var(--tr)
+}
+.step:hover{border-color:var(--border-h)}
+.step .st-num{
+  width:30px;height:30px;border-radius:var(--radius-sm);flex-shrink:0;
+  display:grid;place-items:center;
+  background:var(--primary-dim);border:1px solid var(--border-h);
+  color:var(--primary);font-weight:900;font-size:.82rem
+}
+.step h3{font-size:var(--text-sm);font-weight:600;margin-bottom:.2rem}
+.step p{font-size:var(--text-caption);color:var(--muted);line-height:1.75}
+
+/* الفوتر */
+.home-footer{
+  margin-top:3rem;padding-top:1.3rem;
+  border-top:1px solid var(--border);
+  display:flex;align-items:center;justify-content:space-between;
+  flex-wrap:wrap;gap:1rem
+}
+.home-footer .socials{display:flex;gap:.45rem}
+.soc-link{
+  width:34px;height:34px;border-radius:var(--radius-sm);display:grid;place-items:center;
+  background:var(--card);border:1px solid var(--border);
+  color:var(--muted);font-size:var(--text-sm);transition:var(--tr);text-decoration:none
+}
+.soc-link:hover{color:var(--primary);border-color:var(--border-h);transform:translateY(-2px)}
+.home-footer .meta{font-size:var(--text-caption);color:var(--muted);font-weight:700;display:flex;gap:.55rem;align-items:center}
+.version-badge{
+  padding:.14rem .55rem;border-radius:999px;font-size:var(--text-caption);font-weight:600;
+  background:var(--primary-dim);border:1px solid var(--border-h);color:var(--primary)
+}
+
+.fade-up{opacity:0;transform:translateY(14px);animation:fadeUp .5s ease forwards}
+@keyframes fadeUp{to{opacity:1;transform:none}}
+.d1{animation-delay:.04s}.d2{animation-delay:.1s}.d3{animation-delay:.17s}.d4{animation-delay:.24s}
+
+@media(max-width:1100px){.hub-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:900px){.pricing-grid,.steps{grid-template-columns:1fr}}
+@media(max-width:520px){.hub-grid{grid-template-columns:1fr 1fr}}
+</style>
+</head>
+<body data-page="home">
+<div class="bg-scene" aria-hidden="true"></div>
+
+<div class="layout">
+  <main class="main-area">
+
+    <!-- البطل — مختصر -->
+    <section class="hero">
+      <div class="top-badge fade-up d1"><span class="dot"></span> <span data-i18n="home.badge">لجميع الأقسام الهندسية</span></div>
+      <h1 class="fade-up d1">Civio<span class="xx">X</span></h1>
+      <p class="lead fade-up d2" data-i18n-html="home.lead">
+        <strong>كل ما يحتاجه طالب الهندسة في مكان واحد.</strong>
+      </p>
+      <div class="hero-actions fade-up d2">
+        <button class="btn btn-primary" id="heroStart" type="button"><i class="fa-solid fa-arrow-left"></i> <span data-i18n="home.start">ابدأ مجاناً</span></button>
+        <a class="btn btn-ghost" href="#pricing" data-i18n="home.subs">الاشتراكات</a>
+      </div>
+    </section>
+
+    <!-- اختصارات الصفحات -->
+    <section class="hub-grid" id="hubGrid" aria-label="اختصارات الصفحات"></section>
+
+    <!-- جميع الأقسام الهندسية — مضغوط -->
+    <section class="sect">
+      <h2><span data-cx-icon="platform"></span> <span data-i18n="home.sect.branches">جميع الأقسام الهندسية</span></h2>
+      <div class="branch-strip" id="branchStrip"></div>
+    </section>
+
+    <!-- التسعير -->
+    <section class="sect" id="pricing">
+      <h2><i class="fa-solid fa-crown"></i> <span data-i18n="home.sect.pricing">الاشتراكات</span></h2>
+      <div class="pricing-grid">
+
+        <div class="price-card featured">
+          <span class="pc-ribbon">الأفضل قيمة</span>
+          <div class="pc-name">الاشتراك الشامل</div>
+          <div class="pc-price">20,000 <small>دينار</small></div>
+          <ul>
+            <li><i class="fa-solid fa-circle-check"></i> جميع المقررات + رفع الملفات للأساتذة</li>
+            <li><i class="fa-solid fa-circle-check"></i> جميع الأسئلة الوزارية</li>
+            <li><i class="fa-solid fa-circle-check"></i> الذكاء الاصطناعي — 4 توليدات يومياً</li>
+            <li><i class="fa-solid fa-circle-check"></i> كل ملفات البوربوينت</li>
+            <li><i class="fa-solid fa-circle-check"></i> البرامج الهندسية ومشاريع الطلبة</li>
+            <li><i class="fa-solid fa-circle-check"></i> مساحة تخزين 1 GB</li>
+            <li class="soon"><i class="fa-solid fa-circle-dot"></i> ذكاء اصطناعي للمسائل المعقدة <span class="soon-chip">قريباً</span></li>
+          </ul>
+          <a class="btn btn-primary pc-cta" href="https://t.me/civiox_ofc" target="_blank" rel="noopener"><i class="fa-brands fa-telegram"></i> اشترك الآن</a>
+        </div>
+
+        <div class="price-card">
+          <div class="pc-name">المقررات فقط</div>
+          <div class="pc-price">3,000 <small>دينار / شهر</small></div>
+          <ul>
+            <li><i class="fa-solid fa-circle-check"></i> الوصول الكامل للمقررات</li>
+            <li><i class="fa-solid fa-circle-check"></i> رفع الملفات للأساتذة</li>
+            <li><i class="fa-solid fa-circle-check"></i> تحديثات مستمرة</li>
+          </ul>
+          <a class="btn btn-ghost pc-cta" href="https://t.me/civiox_ofc" target="_blank" rel="noopener"><i class="fa-brands fa-telegram"></i> اشترك</a>
+        </div>
+
+        <div class="price-card">
+          <div class="pc-name">الذكاء الاصطناعي فقط</div>
+          <div class="pc-price">10,000 <small>دينار / شهر</small></div>
+          <ul>
+            <li><i class="fa-solid fa-circle-check"></i> توليد تقارير هندسية</li>
+            <li><i class="fa-solid fa-circle-check"></i> توليد أسئلة واختبارات</li>
+            <li><i class="fa-solid fa-circle-check"></i> 4 توليدات يومياً</li>
+          </ul>
+          <a class="btn btn-ghost pc-cta" href="https://t.me/civiox_ofc" target="_blank" rel="noopener"><i class="fa-brands fa-telegram"></i> اشترك</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- التفعيل -->
+    <section class="sect">
+      <h2><i class="fa-solid fa-key"></i> <span data-i18n="home.sect.steps">التفعيل</span></h2>
+      <div class="steps">
+        <div class="step">
+          <span class="st-num">1</span>
+          <div><h3>راسلنا بالتيليجرام</h3><p>اختر خطتك وادفع.</p></div>
+        </div>
+        <div class="step">
+          <span class="st-num">2</span>
+          <div><h3>استلم كودك</h3><p>يعمل مرة واحدة.</p></div>
+        </div>
+        <div class="step">
+          <span class="st-num">3</span>
+          <div><h3>فعّل من الإعدادات</h3><p>يتفعّل حسابك فوراً.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- الفوتر -->
+    <footer class="home-footer">
+      <div class="socials">
+        <a href="https://t.me/civiox_ofc" target="_blank" rel="noopener noreferrer" class="soc-link" aria-label="Telegram"><i class="fa-brands fa-telegram-plane"></i></a>
+        <a href="https://www.instagram.com/civiox.ofc" target="_blank" rel="noopener noreferrer" class="soc-link" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+        <a href="https://www.facebook.com/civiox" target="_blank" rel="noopener noreferrer" class="soc-link" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="https://x.com/civiox_ofc" target="_blank" rel="noopener noreferrer" class="soc-link" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
+      </div>
+      <div class="meta">
+        <span class="version-badge">v3.2</span>
+        <span>CivioX © 2026</span>
+      </div>
+    </footer>
+
+  </main>
+</div>
+
+<script src="js/config.js?v=7.60"></script>
+<script src="js/data.js?v=7.60"></script>
+<script>window.CVX_BASE='';</script>
+<script src="js/core.js?v=7.60"></script>
+<script>
+'use strict';
+document.addEventListener('civiox:ready', () => {
+  const authed = !!CVX.session;
+
+  /* اختصارات الصفحات — أوصاف مختصرة */
+  const DESC = {
+    courses: 'ملازم ومحاضرات لكل المراحل',
+    ministerial: '100 سؤال مجاناً',
+    programs: 'برامج هندسية مع شروح التنصيب',
+    ai: 'تقارير وأسئلة بالذكاء الاصطناعي',
+    reports: 'تقارير جاهزة للطباعة',
+    equation: 'معادلات إلى Word قابلة للتحرير',
+    files: 'بوربوينت — ملفان مجاناً',
+    projects: 'ارفع مشروعك وشاركه',
+    about: 'الفريق والرؤية'
+  };
+  /* بلا أيقونات أقفال: الضغط على أي قسم يفتح شاشة التسجيل للزائر */
+  document.getElementById('hubGrid').innerHTML = CVX.NAV.filter(n => n.id !== 'home').map((n, i) => `
+    <a class="hub-cell fade-up d${(i % 4) + 1}" href="${n.href}" data-hub="${n.id}">
+      <div class="h-icon">${CVX.navIcon(n)}</div>
+      <h3><span data-i18n="nav.${n.id}">${CVX.t('nav.' + n.id, n.title)}</span></h3>
+      <p>${DESC[n.id] || ''}</p>
+    </a>`).join('');
+
+  /* الحراسة مركزية في core.js: أي رابط داخلي غير عام يفتح شاشة التسجيل للزائر */
+
+  /* شريط الأقسام الهندسية المضغوط */
+  document.getElementById('branchStrip').innerHTML = window.CIVIOX_BRANCHES.map(b => `
+    <span class="branch-chip"><i class="fa-solid ${b.icon}"></i>${b.name}</span>`).join('');
+
+  document.getElementById('heroStart').addEventListener('click', () => {
+    /* الزائر: نافذة التسجيل مباشرة — الدخول للمنصة يتطلب حساباً */
+    if (window.CVX && CVX.access && !CVX.access.authenticated) { CVX.openAuth(); return; }
+    if (window.CVX && CVX.navigate) CVX.navigate('pages/courses.html');
+    else location.href = 'pages/courses.html';
+  });
+});
+</script>
+</body>
+</html>
